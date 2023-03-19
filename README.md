@@ -18,11 +18,15 @@ Cars:
 - Search after name
 - Descending sort
 - UNDO/REDO
+
+
 Client Cards:
 - CRUD
 - Search after name
 - Descending sort
 - UNDO/REDO
+
+
 Transactions:
 - CRUD
 - Delete all transactions from a certain date interval
