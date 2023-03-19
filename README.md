@@ -11,20 +11,20 @@ Together, the Django and Angular technologies provide a robust and scalable solu
 - Postman
 
 # Functionalities:
-  Cars:
-    - CRUD
-    - Random generations
-    - Update guarantee
-    - Search after name
-    - Descending sort
-    - UNDO/REDO
-  Client Cards:
-    - CRUD
-    - Search after name
-    - Descending sort
-    - UNDO/REDO
-  Transactions:
-    - CRUD
-    - Delete all transactions from a certain date interval
-    - Filter transactions from a certain date interval
-    - UNDO/REDO
+Cars:
+- CRUD
+- Random generations
+- Update guarantee
+- Search after name
+- Descending sort
+- UNDO/REDO
+Client Cards:
+- CRUD
+- Search after name
+- Descending sort
+- UNDO/REDO
+Transactions:
+- CRUD
+- Delete all transactions from a certain date interval
+- Filter transactions from a certain date interval
+- UNDO/REDO
