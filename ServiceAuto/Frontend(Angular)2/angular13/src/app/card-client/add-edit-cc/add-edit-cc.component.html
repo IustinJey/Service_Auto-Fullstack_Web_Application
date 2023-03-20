@@ -1,0 +1,40 @@
+<div class="from-froup row">
+
+    <label class = "col-sm-2 col-form-label">Numele Clientului:</label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <input type = "text" class="form-control" [(ngModel)]="nume_client"
+        placeholder = "Introduceti numele clientului">
+    </div>
+
+    <label class = "col-sm-2 col-form-label">Prenumele Clientului:</label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <input type = "text" class="form-control" [(ngModel)]="prenume_client"
+        placeholder = "Introduceti prenumele clientului">
+    </div>
+
+    <label class = "col-sm-2 col-form-label">CNP Client:</label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <input type="number" class="form-control" [(ngModel)]="CNP_client"
+        placeholder = "Introduceti CNP-ul clientului">
+    </div>
+
+    <label class = "col-sm-2 col-form-label">Data Inregistrarii:</label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <input type = "date" class="form-control" [(ngModel)]="data_inregistrarii"
+        placeholder = "Introduceti data inregistrarii">
+    </div>
+
+    <label class = "col-sm-2 col-form-label">Data Nasterii:</label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <input type = "date" class="form-control" [(ngModel)]="data_nasterii"
+        placeholder = "Introduceti data nasterii">
+    </div>
+
+</div>
+
+<button (click)="addCardClient()" *ngIf="card_client.id_card_client==0" class="btn btn-primary">
+Adauga
+</button>
+<button (click)="updateCardClient()" *ngIf="card_client.id_card_client!=0" class="btn btn-primary">
+Update
+</button>

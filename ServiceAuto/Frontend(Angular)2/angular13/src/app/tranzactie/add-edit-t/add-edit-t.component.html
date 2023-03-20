@@ -1,0 +1,50 @@
+<div class="from-froup row">
+
+    <label class = "col-sm-2 col-form-label">Id-ul masinii:</label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <select class ="col-sm-10" [(ngModel)]="id_masina">
+            <option>--Select--</option>
+            <option *ngFor="let car of CarList">
+                {{car.id_car}}
+
+            </option>
+        </select>
+    </div>
+
+    <label class = "col-sm-2 col-form-label">Id-ul cardului:</label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <select class ="col-sm-10" [(ngModel)]="id_card_client">
+            <option>None</option>
+            <option *ngFor="let card of CardClientList">
+                {{card.id_card_client}} 
+
+            </option>
+        </select>
+    </div>
+
+    <label class = "col-sm-2 col-form-label">Suma Piese:</label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <input type="number" class="form-control" [(ngModel)]="suma_piese"
+        placeholder = "Introduceti suma pieselor">
+    </div>
+
+    <label class = "col-sm-2 col-form-label"  >Suma Manopera:</label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <input type="number" class="form-control" [(ngModel)]="suma_manopera"
+        placeholder = "Introduceti suma manoperei">
+    </div>
+
+    <label class = "col-sm-2 col-form-label">Data:</label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <input type = "date" class="form-control" [(ngModel)]="data"
+        placeholder = "Introduceti data">
+    </div>
+
+</div>
+
+<button (click)="addTranzactie()" *ngIf="tranzactie.id_tranzactie==0" class="btn btn-primary">
+Adauga
+</button>
+<button (click)="updateTranzactie()" *ngIf="tranzactie.id_tranzactie!=0" class="btn btn-primary">
+Update
+</button>

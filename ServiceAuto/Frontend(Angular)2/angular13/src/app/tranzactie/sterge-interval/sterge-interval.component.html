@@ -1,0 +1,17 @@
+<div class="from-froup row">
+    <label class = "col-sm-2 col-form-label">Datile mai mari de: </label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <input type="date" class="form-control" [(ngModel)]="interval1"
+        placeholder = "Datile mai mari de:">
+    </div>
+
+    <label class = "col-sm-2 col-form-label"  >Datile mai mici de:</label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <input type="date" class="form-control" [(ngModel)]="interval2"
+        placeholder = "Datile mai mici de:">
+    </div>
+</div>
+
+<button (click)="sterge_tranzactiile()" class="btn btn-danger">
+Sterge tranzactiile
+</button>

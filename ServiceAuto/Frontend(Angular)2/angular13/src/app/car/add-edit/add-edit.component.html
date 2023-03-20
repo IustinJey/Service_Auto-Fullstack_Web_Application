@@ -1,0 +1,36 @@
+<div class="from-froup row">
+
+        <label class = "col-sm-2 col-form-label">Modelul masinii:</label>
+        <div class = "col-sm-10" style="padding: 3px;">
+            <input type = "text" class="form-control" [(ngModel)]="model_car"
+            placeholder = "Introduceti modelul masinii">
+        </div>
+
+        <label class = "col-sm-2 col-form-label">Anul achizitiei:</label>
+        <div class = "col-sm-10" style="padding: 3px;">
+            <input type = "date" class="form-control" [(ngModel)]="an_achizitie_car"
+            placeholder = "Introduceti anul achizitiei">
+        </div>
+
+        <label class = "col-sm-2 col-form-label">Numarul de km:</label>
+        <div class = "col-sm-10" style="padding: 3px;">
+            <input type="number" class="form-control" [(ngModel)]="nr_km_car"
+            placeholder = "Introduceti numarul de km">
+        </div>
+
+        <label class = "col-sm-2 col-form-label">Garantie:</label>
+        <div class = "col-sm-10" style="padding: 3px;">
+            <select class ="col-sm-10" [(ngModel)]="garantie_car">
+                <option>False</option>
+                <option>True</option>
+            </select>
+        </div>
+
+</div>
+
+<button (click)="addCar()" *ngIf="car.id_car==0" class="btn btn-primary">
+    Adauga
+</button>
+<button (click)="updateCar()" *ngIf="car.id_car!=0" class="btn btn-primary">
+    Update
+</button>

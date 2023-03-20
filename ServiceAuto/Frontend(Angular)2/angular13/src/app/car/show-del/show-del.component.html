@@ -1,0 +1,156 @@
+<head>
+    
+  <meta charset="utf-8"> 
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    
+  <link rel="stylesheet" href= 
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+      
+  <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+  </script> 
+      
+  <script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> 
+  </script> 
+      
+  <script src= 
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> 
+  </script> 
+    
+  <style type="text/css">
+      h1 {
+          color:rgb(0, 80, 253);
+      }
+      .xyz {
+          background-size: auto;
+          text-align: center;
+          padding-top: 100px;
+      }
+      .btn-circle.btn-sm {
+          width: 30px;
+          height: 30px;
+          padding: 6px 0px;
+          border-radius: 15px;
+          font-size: 8px;
+          text-align: center;
+      }
+      .btn-circle.btn-md {
+          width: 50px;
+          height: 50px;
+          padding: 7px 10px;
+          border-radius: 25px;
+          font-size: 10px;
+          text-align: center;
+      }
+      .btn-circle.btn-xl {
+          width: 70px;
+          height: 70px;
+          padding: 10px 16px;
+          border-radius: 35px;
+          font-size: 12px;
+          text-align: center;
+      }
+  </style>
+</head>
+
+<body>
+  <button type="button" class="btn btn-warning btn-md"  
+  (click)="activeazaSort()"
+  data-backdrop="static" data-keyboard="false"
+  > 
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-right" viewBox="0 0 16 16">
+    <path d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z"/>
+  </svg>  Sorteaza Descrescator
+  </button>
+
+  <button type="button" class="btn btn-success btn-md m-2"  
+  (click)="actualizeaza_garantiile()"
+  data-backdrop="static" data-keyboard="false"
+  > 
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+  </svg>  Actualizeaza garantiile
+  </button>
+
+  <button type="button" class="btn btn-primary btn-circle btn-md float-right"  data-toggle="modal" data-target="#exampleModal" 
+  (click)="addClick()"
+  data-backdrop="static" data-keyboard="false"
+  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+  </svg>
+    </button>
+
+    <button type="button" class="btn btn-warning btn-md" data-toggle="modal" data-target="#exampleModal"  
+    (click)="generare()"
+    data-backdrop="static" data-keyboard="false"
+    > 
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shuffle" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"/>
+      <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"/>
+    </svg>  Generare aleatorie
+    </button>
+  
+  
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+            <button type="button" class="close" 
+            data-dismiss="modal" aria-label="Close"
+            (click)="closeClick()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <app-add-edit [car]="car" *ngIf="ActivateAddEditComp"></app-add-edit>
+            <app-generare-aleatorie *ngIf="ActivateGenerari" ></app-generare-aleatorie>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>id_car</th>
+              <th>model_car</th>
+              <th>an_achizitie</th>
+              <th>nr_km_car</th>
+              <th>garantie_car</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let dataItem of CarList">
+              <td>{{dataItem.id_car}}</td>
+              <td>{{dataItem.model_car}}</td>
+              <td>{{dataItem.an_achizitie_car}}</td>
+              <td>{{dataItem.nr_km_car}}</td>
+              <td>{{dataItem.garantie_car}}</td>
+              <td>
+                  <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal" 
+                  (click)="editClick(dataItem)"
+                  data-backdrop="static" data-keyboard="false">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>
+                  </button>
+                  <button type="button" class="btn btn-danger float-right m-2" data-target="#exampleModal" 
+                  (click)="deleteClick(dataItem)"
+                  data-backdrop="static" data-keyboard="false">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                  </svg>
+                  </button>
+              </td>
+          </tr>
+      </tbody>
+</table>
+</body>

@@ -1,0 +1,153 @@
+<head>
+    
+    <meta charset="utf-8"> 
+      
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+      
+    <link rel="stylesheet" href= 
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+        
+    <script src= 
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+    </script> 
+        
+    <script src= 
+  "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> 
+    </script> 
+        
+    <script src= 
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> 
+    </script> 
+      
+    <style type="text/css">
+        h1 {
+            color:rgb(0, 80, 253);
+        }
+        .xyz {
+            background-size: auto;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .btn-circle.btn-sm {
+            width: 30px;
+            height: 30px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            font-size: 8px;
+            text-align: center;
+        }
+        .btn-circle.btn-md {
+            width: 50px;
+            height: 50px;
+            padding: 7px 10px;
+            border-radius: 25px;
+            font-size: 10px;
+            text-align: center;
+        }
+        .btn-circle.btn-xl {
+            width: 70px;
+            height: 70px;
+            padding: 10px 16px;
+            border-radius: 35px;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+  </head>
+  
+  <body>
+    <button type="button" class="btn btn-warning btn-md"  data-toggle="modal" data-target="#exampleModal" 
+    (click)="activeaza_filtru()"
+    data-backdrop="static" data-keyboard="false"
+    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+      <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+    </svg>  Filtru
+      </button>
+      
+      <button type="button" class="btn btn-danger btn-md m-3"  data-toggle="modal" data-target="#exampleModal" 
+      (click)="sterge_t()"
+      data-backdrop="static" data-keyboard="false"
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-week-fill" viewBox="0 0 16 16">
+        <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM9.5 7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm3 0h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zM2 10.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
+      </svg>   Sterge din interval
+        </button>
+
+    <button type="button" class="btn btn-primary btn-circle btn-md float-right"  data-toggle="modal" data-target="#exampleModal" 
+    (click)="addClick()"
+    data-backdrop="static" data-keyboard="false"
+    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+    </svg>
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+              <button type="button" class="close" 
+              data-dismiss="modal" aria-label="Close"
+              (click)="closeClick()" *ngIf="!filtruActivat">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <button type="button" class="close" 
+              data-dismiss="modal" aria-label="Close"
+              (click)="closeFilter()" *ngIf="filtruActivat">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <app-add-edit-t [tranzactie]="tranzactie" *ngIf="ActivateAddEditComp"></app-add-edit-t>
+              <app-interval-tran *ngIf="filtruActivat"></app-interval-tran>
+              <app-sterge-interval *ngIf="stergeActivat"></app-sterge-interval>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>id_tranzactie</th>
+                <th>id_masina</th>
+                <th>id_card_client</th>
+                <th>suma_piese</th>
+                <th>suma_manopera</th>
+                <th>data</th>
+                <th>suma_totala</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dataItem of TranzactieList">
+                <td>{{dataItem.id_tranzactie}}</td>
+                <td>{{dataItem.id_masina}}</td>
+                <td>{{dataItem.id_card_client}}</td>
+                <td>{{dataItem.suma_piese}}</td>
+                <td>{{dataItem.suma_manopera}}</td>
+                <td>{{dataItem.data}}</td>
+                <td>{{dataItem.suma_totala}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal" 
+                    (click)="editClick(dataItem)"
+                    data-backdrop="static" data-keyboard="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                    </svg>
+                    </button>
+                    <button type="button" class="btn btn-danger float-right m-2" data-target="#exampleModal" 
+                    (click)="deleteClick(dataItem)"
+                    data-backdrop="static" data-keyboard="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                      <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                    </svg>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+  </table>
+  </body>

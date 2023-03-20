@@ -1,0 +1,17 @@
+<div class="from-froup row">
+    <label class = "col-sm-2 col-form-label">Suma totala mai mare de: </label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <input type="number" class="form-control" [(ngModel)]="interval_a"
+        placeholder = "Suma totala mai mare de:">
+    </div>
+
+    <label class = "col-sm-2 col-form-label"  >Suma totala mai mica de:</label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <input type="number" class="form-control" [(ngModel)]="interval_b"
+        placeholder = "Suma totala mai mica de:">
+    </div>
+</div>
+
+<button (click)="filtreaza()" class="btn btn-primary">
+Filtreaza
+</button>

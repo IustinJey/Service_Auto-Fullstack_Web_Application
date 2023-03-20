@@ -1,0 +1,13 @@
+<div class="from-froup row">
+
+    <label class = "col-sm-2 col-form-label">Numarul de masini ce doriti a fi generate:</label>
+    <div class = "col-sm-10" style="padding: 3px;">
+        <input type = "nume" class="form-control" [(ngModel)]="nr_generari"
+        placeholder = "Introduceti numarul de masini ce doriti a fi generate">
+    </div>
+
+</div>
+
+<button (click)="genereazaCar()" class="btn btn-primary">
+Genereaza
+</button>
