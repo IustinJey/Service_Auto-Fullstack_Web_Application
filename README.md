@@ -8,6 +8,7 @@ Together, the Django and Angular technologies provide a robust and scalable solu
 - Django with Python
 - Angular with TypeScript
 - MySQL Lite
+- HTML
 - Postman
 
 # Functionalities:
